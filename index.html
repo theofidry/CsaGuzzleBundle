@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Csaguzzlebundle by csarrazi</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Csaguzzlebundle</h1>
+        <h2>A bundle integrating Guzzle &gt;=4.0 in Symfony</h2>
+        <a href="https://github.com/csarrazi/CsaGuzzleBundle" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="csaguzzlebundle" class="anchor" href="#csaguzzlebundle" aria-hidden="true"><span class="octicon octicon-link"></span></a>CsaGuzzleBundle</h1>
+
+<p><a href="https://gitter.im/csarrazi/CsaGuzzleBundle?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a></p>
+
+<p><a href="https://packagist.org/packages/csa/guzzle-bundle" title="Latest Stable Version"><img src="https://poser.pugx.org/csa/guzzle-bundle/v/stable.png" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/csa/guzzle-bundle" title="Latest Unstable Version"><img src="https://poser.pugx.org/csa/guzzle-bundle/v/unstable.png" alt="Latest Unstable Version"></a>
+<a href="https://travis-ci.org/csarrazi/CsaGuzzleBundle" title="Build status"><img src="https://travis-ci.org/csarrazi/CsaGuzzleBundle.png?branch=master" alt="Build Status"></a>
+<a href="https://insight.sensiolabs.com/projects/eceadd60-cc6c-473c-9d20-e8207654d70b" title="SensioLabsInsight"><img src="https://insight.sensiolabs.com/projects/eceadd60-cc6c-473c-9d20-e8207654d70b/mini.png" alt="SensioLabsInsight"></a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add the required package using composer.</p>
+
+<div class="highlight highlight-bash"><pre>composer require csa/guzzle-bundle:@stable</pre></div>
+
+<p>Add the bundle to your AppKernel.</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// in %kernel.root_dir%/AppKernel.php</span></span>
+<span class="pl-s1"><span class="pl-smi">$bundles</span>[] <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Csa\Bundle\GuzzleBundle\</span><span class="pl-c1">CsaGuzzleBundle</span>();</span></pre></div>
+
+<p>To enable the data collector (only in the <code>dev</code> environment, you may simply
+configure the CsaGuzzleBundle as follows:</p>
+
+<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">csa_guzzle:</span></span>
+    <span class="pl-s"><span class="pl-ent">profiler:</span> <span class="pl-s">%kernel.debug%</span></span></pre></div>
+
+<p>You may also enable the included logger, in order log outcoming requests:</p>
+
+<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">csa_guzzle:</span></span>
+    <span class="pl-s"><span class="pl-ent">logger:</span> <span class="pl-s">true</span></span></pre></div>
+
+<h2>
+<a id="upgrade" class="anchor" href="#upgrade" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade</h2>
+
+<p>Although I try to guarantee forward-compatibility of the bundle with previous versions.
+Here are the upgrade notes between each version.</p>
+
+<p>See <a href="UPGRADE.md">Upgrade.md</a>.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<ul>
+<li><a href="src/Resources/doc/clients.md">Creating clients</a></li>
+<li><a href="src/Resources/doc/event_subscribers.md">Registering new event subscribers</a></li>
+<li><a href="src/Resources/doc/available_subscribers.md">Available event subscribers</a></li>
+<li><a href="src/Resources/doc/configuration_reference.md">Configuration reference</a></li>
+<li><a href="src/Resources/doc/response_streaming.md">Streaming a guzzle response</a></li>
+<li><a href="src/Resources/doc/service_descriptions.md">Service descriptions</a></li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This library is under the MIT license. For the full copyright and license
+information, please view the <a href="src/Resources/meta/LICENSE">LICENSE</a> file that was
+distributed with this source code.</p>
+
+<p><a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/csarrazi/CsaGuzzleBundle/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/csarrazi/CsaGuzzleBundle/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/csarrazi/CsaGuzzleBundle"></a> is maintained by <a href="https://github.com/csarrazi">csarrazi</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
