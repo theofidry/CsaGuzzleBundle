@@ -56,7 +56,7 @@
 {% endblock %}
 
 {% block menu %}
-    <span class="label">
+    <span class="label {% if collector.errors|length > 0 %}label-status-error{% endif %}">
         <span class="icon">
             {{ include('@CsaGuzzle/Collector/icon.svg') }}
         </span>
