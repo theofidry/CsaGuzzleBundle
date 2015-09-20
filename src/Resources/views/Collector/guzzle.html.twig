@@ -1,5 +1,7 @@
 {% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
 
+{% set profiler_markup_version = profiler_markup_version|default(1) %}
+
 {% block toolbar %}
 
     {% set callCount = collector.calls|length %}
@@ -19,8 +21,13 @@
     {% endif %}
 
     {% set icon %}
-        {% include '@CsaGuzzle/Collector/icon.html.twig' with { alt: collector.name } only %}
-        <span class="sf-toolbar-status sf-toolbar-status-{{ color }}">{{ callCount }}</span>
+        {% if profiler_markup_version == 1 %}
+            <img src="{{ asset('bundles/csaguzzle/images/icon.svg') }}" alt="{{ collector.name|capitalize|default('HTTP calls') }}" />
+            <span class="sf-toolbar-status sf-toolbar-status-{{ color }}">{{ callCount }}</span>
+        {% else %}
+            <img src="{{ asset('bundles/csaguzzle/images/icon.svg') }}" alt="{{ collector.name|capitalize|default('HTTP calls') }}" />
+            <span class="sf-toolbar-status sf-toolbar-status-{{ color }}">{{ callCount }}</span>
+        {% endif %}
     {% endset %}
 
     {% set text %}
@@ -52,7 +59,7 @@
 {% block menu %}
     <span class="label">
         <span class="icon">
-            {% include '@CsaGuzzle/Collector/icon.html.twig' with { alt: collector.name } only %}
+            <img src="{{ asset('bundles/csaguzzle/images/icon.svg') }}" alt="{{ collector.name|capitalize|default('HTTP calls') }}" />
         </span>
         <strong>{{ collector.name|capitalize|default('HTTP calls') }}</strong>
         <span class="count">
